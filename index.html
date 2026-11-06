@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Pop Tune — One-Tap City Pop Maker | 盆栽企画</title>
+
+  <meta name="description" content="Nostalgia for the 80s Japan you never knew. No studio, no skills. Just pure City Pop, one tap. City Pop Tune by BONSAI PROJECT.">
+  <meta name="keywords" content="City Pop Tune,City Pop,シティポップ,シティポップチューン,盆栽企画,BONSAI PROJECT,music maker,80s,Tokyo">
+  <meta name="author" content="BONSAI PROJECT (盆栽企画)">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#F3E9D2">
+
+  <link rel="canonical" href="https://mizotan.github.io/citypoptune/">
+
+  <link rel="icon" type="image/png" href="spt_512.png">
+  <link rel="apple-touch-icon" href="spt_512.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="City Pop Tune">
+  <meta property="og:title" content="City Pop Tune — One-Tap City Pop Maker">
+  <meta property="og:description" content="Nostalgia for the 80s Japan you never knew. Press play.">
+  <meta property="og:url" content="https://mizotan.github.io/citypoptune/">
+  <meta property="og:image" content="https://mizotan.github.io/citypoptune/spt_512.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="City Pop Tune — One-Tap City Pop Maker">
+  <meta name="twitter:description" content="No studio, no skills. Just pure City Pop, one tap.">
+  <meta name="twitter:image" content="https://mizotan.github.io/citypoptune/spt_512.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "City Pop Tune",
+    "alternateName": "シティポップチューン",
+    "url": "https://mizotan.github.io/citypoptune/",
+    "applicationCategory": "MusicApplication",
+    "operatingSystem": "Web, Android",
+    "description": "No studio, no skills. Just pure City Pop, one tap.",
+    "author": {
+      "@type": "Organization",
+      "name": "BONSAI PROJECT",
+      "alternateName": "盆栽企画",
+      "url": "https://mizotan.github.io/bonsaiproject/"
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F3E9D2;
+      --cream-light: #FBF6E9;
+      --teal: #3CC5BE;
+      --teal-deep: #137F82;
+      --ink: #14181C;
+      --muted: #5E6A6E;
+      --coral: #FF7A66;
+      --pink: #F28AB0;
+      --line: rgba(19, 127, 130, 0.22);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: var(--cream-light);
+      color: var(--ink);
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 28px; position: relative; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 90px 28px 110px;
+      position: relative; overflow: hidden;
+      background: linear-gradient(180deg, #CDEFEA 0%, var(--cream) 62%, var(--cream-light) 100%);
+    }
+    /* retro sunset */
+    .sun {
+      position: absolute; top: 9%; left: 50%; transform: translateX(-50%);
+      width: clamp(260px, 56vw, 420px); aspect-ratio: 1; border-radius: 50%;
+      background: linear-gradient(180deg, var(--pink) 0%, var(--coral) 55%, #FFB36B 100%);
+      opacity: 0.55;
+      -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 18px);
+              mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 18px);
+      -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+      pointer-events: none;
+    }
+    .sun::after {
+      content: ''; position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(180deg, transparent 52%, rgba(251,246,233,1) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+
+    .app-icon {
+      width: clamp(120px, 28vw, 168px); height: auto; aspect-ratio: 1;
+      border-radius: 26%;
+      box-shadow: 0 18px 44px rgba(19, 127, 130, 0.35), 0 0 0 5px rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+    }
+    .hero-label {
+      font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--teal-deep); margin-bottom: 14px; padding-left: 0.5em;
+    }
+    h1 {
+      font-weight: 600; text-transform: uppercase;
+      font-size: clamp(38px, 10vw, 72px);
+      letter-spacing: 0.16em; text-indent: 0.16em; line-height: 1.1;
+      color: var(--ink);
+    }
+    h1 span { color: var(--teal-deep); }
+    .tagline {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(17px, 3.6vw, 22px); letter-spacing: 0.04em;
+      line-height: 1.6; color: var(--ink);
+      max-width: 520px; margin: 30px 0 14px;
+    }
+    .sub-tagline { font-size: 14px; letter-spacing: 0.1em; color: var(--muted); max-width: 440px; margin-bottom: 40px; }
+
+    .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .btn {
+      display: inline-block; padding: 16px 48px;
+      border: 1.5px solid var(--ink); background: var(--ink); color: var(--cream-light);
+      font-size: 12px; font-weight: 600; letter-spacing: 0.32em; text-indent: 0.32em; text-transform: uppercase;
+      text-decoration: none; border-radius: 999px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn:hover { background: var(--teal); border-color: var(--teal); color: var(--ink); transform: translateY(-2px); box-shadow: 0 10px 26px rgba(19,127,130,0.25); }
+    .badge-status {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-deep);
+      border: 1px dashed var(--teal-deep); padding: 4px 14px; border-radius: 999px;
+    }
+
+    /* ---------- Sections ---------- */
+    section { padding: 96px 0; }
+    .section-label { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 14px; }
+    h2 { font-weight: 600; font-size: 28px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 22px; }
+    p { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.9; }
+
+    .divider { display: flex; align-items: center; justify-content: center; max-width: 380px; margin: 0 auto; height: 24px; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); }
+    .divider-gem { width: 7px; height: 7px; background: var(--coral); transform: rotate(45deg); margin: 0 16px; }
+
+    .features { display: grid; gap: 22px; margin-top: 42px; }
+    .feature {
+      padding: 24px 28px; background: #fff; border-radius: 14px;
+      border: 1px solid var(--line); border-left: 5px solid var(--teal);
+      transition: transform 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover { transform: translateX(4px); border-left-color: var(--coral); box-shadow: 0 10px 28px rgba(19,127,130,0.12); }
+    .feature h3 { font-weight: 600; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 6px; }
+    .feature p { font-size: 14px; line-height: 1.75; }
+
+    .voices { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .voices span {
+      font-size: 12px; letter-spacing: 0.14em; padding: 7px 16px; border-radius: 999px;
+      background: rgba(60,197,190,0.16); color: var(--teal-deep); border: 1px solid rgba(19,127,130,0.28);
+    }
+
+    /* ---------- Night ---------- */
+    .night {
+      background: linear-gradient(180deg, #11232B 0%, #1B1F3A 100%);
+      color: var(--cream); text-align: center; padding: 120px 0;
+    }
+    .night .section-label { color: var(--teal); }
+    .night h2 { color: var(--cream-light); }
+    .night p { margin: 0 auto; color: rgba(243,233,210,0.72); }
+    .eq { display: flex; justify-content: center; align-items: flex-end; gap: 7px; height: 70px; margin: 44px auto 0; }
+    .eq i { width: 8px; border-radius: 3px; background: linear-gradient(180deg, var(--pink), var(--teal)); animation: bounce 1.2s ease-in-out infinite; }
+    .eq i:nth-child(1){height:30%;animation-delay:-.9s} .eq i:nth-child(2){height:70%;animation-delay:-.7s}
+    .eq i:nth-child(3){height:45%;animation-delay:-.5s} .eq i:nth-child(4){height:90%;animation-delay:-.3s}
+    .eq i:nth-child(5){height:55%;animation-delay:-.1s} .eq i:nth-child(6){height:80%;animation-delay:-.6s}
+    .eq i:nth-child(7){height:40%;animation-delay:-.4s}
+    @keyframes bounce { 0%,100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+    .eq i { transform-origin: bottom; }
+    @media (prefers-reduced-motion: reduce) { .eq i { animation: none; } .btn, .feature { transition: none; } }
+
+    /* ---------- Footer ---------- */
+    footer { padding: 84px 0 96px; text-align: center; background: var(--cream-light); border-top: 1px solid var(--line); }
+    .footer-title { font-size: 11px; letter-spacing: 0.3em; color: var(--muted); margin-bottom: 26px; }
+    .brand-link { display: inline-flex; flex-direction: column; align-items: center; gap: 14px; text-decoration: none; transition: opacity 0.3s ease; }
+    .brand-link:hover { opacity: 0.75; }
+    .brand-logo { width: 64px; height: 64px; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 18px rgba(0,0,0,0.1); }
+    .credit { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; letter-spacing: 0.12em; color: var(--ink); }
+    .credit span { display: block; font-family: 'Josefin Sans', sans-serif; font-style: normal; font-size: 10px; letter-spacing: 0.25em; color: var(--muted); margin-top: 2px; }
+    .footer-nav { margin-top: 34px; display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; list-style: none; }
+    .footer-nav a { font-size: 12px; letter-spacing: 0.12em; color: var(--muted); text-decoration: none; transition: color 0.2s ease; }
+    .footer-nav a:hover { color: var(--teal-deep); }
+    .copyright { margin: 38px auto 0; font-size: 10px; letter-spacing: 0.2em; color: var(--muted); max-width: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="sun"></div>
+    <div class="hero-content">
+      <img src="spt_512.png" alt="City Pop Tune app icon" class="app-icon" width="168" height="168">
+      <div class="hero-label">80s Tokyo Night Drive</div>
+      <h1>City Pop <span>Tune</span></h1>
+      <p class="tagline">
+        Nostalgia for the 80s Japan you never knew. Press play.
+      </p>
+      <p class="sub-tagline">
+        No studio, no skills. Just pure City Pop, one tap.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn">Open App</a>
+        <span class="badge-status">Google Play Release: Coming Soon</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider"><span class="divider-gem"></span></div>
+
+  <!-- Concept -->
+  <section>
+    <div class="container">
+      <div class="section-label">Concept</div>
+      <h2>Neon, Summer, Midnight</h2>
+      <p>
+        Glossy synths, warm electric piano and a groove made for night drives.<br>
+        City Pop Tune puts that golden era of Japanese pop in your pocket.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"><span class="divider-gem"></span></div>
+
+  <!-- Features -->
+  <section>
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h2>Essence</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>One-Tap Groove</h3>
+          <p>Hit play and a smooth BPM City Pop groove starts right away. No setup, no music theory.</p>
+        </div>
+        <div class="feature">
+          <h3>Chord, Bass &amp; Lead</h3>
+          <p>A 16-step sequencer with three lanes. Watch every note light up as the tune rolls on.</p>
+        </div>
+        <div class="feature">
+          <h3>Lead Programs</h3>
+          <p>Pick the voice that sings your melody. Or let Smart Lead blend guitar and analog synth for you.</p>
+          <div class="voices">
+            <span>DX EP</span><span>Analog Lead</span><span>City Guitar</span><span>Soft Brass</span>
+            <span>Synth Flute</span><span>Digital Bell</span><span>Smart Lead</span>
+          </div>
+        </div>
+        <div class="feature">
+          <h3>Remix</h3>
+          <p>Not feeling it? Tap Remix for a brand-new lead phrase, and add chime, Rhodes and rimshot spices on the fly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span class="divider-gem"></span></div>
+
+  <!-- Night -->
+  <section class="night">
+    <div class="container">
+      <div class="section-label">Press Play</div>
+      <h2>✦ Your City, After Dark ✦</h2>
+      <p>
+        Roll the windows down.<br>
+        The night is yours.
+      </p>
+      <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-title">CITY POP TUNE</div>
+
+      <a href="https://mizotan.github.io/bonsaiproject/" class="brand-link" title="BONSAI PROJECT Official Portal">
+        <img src="rogo.png" alt="盆栽企画 presents (BONSAI PROJECT)" class="brand-logo">
+        <div class="credit">
+          盆栽企画 presents
+          <span>BONSAI PROJECT OFFICIAL</span>
+        </div>
+      </a>
+
+      <ul class="footer-nav">
+        <li><a href="https://mizotan.github.io/bonsaiproject/">Portal</a></li>
+        <li><a href="https://mizotan.github.io/privacypolicy/">Privacy Policy</a></li>
+        <li><a href="https://mizotan.github.io/terms/">Terms of Service</a></li>
+        <li><a href="mailto:bonsai.project.2026@gmail.com">Contact</a></li>
+      </ul>
+
+      <p class="copyright">&copy; 2026 BONSAI PROJECT All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
